@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<h1>Что есть поесть</h1>
+<ul>
+    {% for pelmeni in pelmenis %}
+    <li>
+        <img src="{{ pelmeni.image.url }}" alt="{{ pelmeni.name }}" width="20%" height="20%">
+        <h2>{{ pelmeni.name }}</h2>
+        <p>{{ pelmeni.description }}</p>
+        <p>{{ pelmeni.price }} У.Е.</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
