@@ -1,6 +1,6 @@
 from django.db import models
 
-class Pelmeni(models.Model):
+class Thing(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
@@ -9,10 +9,11 @@ class Pelmeni(models.Model):
     def __str__(self):
         return self.name
 
-class BlogPost(models.Model):
+class Review(models.Model): 
     title = models.CharField(max_length=200)
-    content = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
+    body = models.TextField()
+    rating = models.IntegerField()
 
     def __str__(self):
         return self.title
+    

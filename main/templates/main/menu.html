@@ -1,13 +1,18 @@
 {% extends 'main/base.html' %}
+
 {% block content %}
-<h1>Что есть поесть</h1>
-<ul>
-    {% for pelmeni in pelmenis %}
-    <li>
-        <img src="{{ pelmeni.image.url }}" alt="{{ pelmeni.name }}" width="20%" height="20%">
-        <h2>{{ pelmeni.name }}</h2>
-        <p>{{ pelmeni.description }}</p>
-        <p>{{ pelmeni.price }} У.Е.</p>
+<h1>Горячие и вкусные блюда</h1>
+<ul class="menu-items">
+    {% for thing in things %}
+    <li class="menu-item">
+        <div class="item-wrapper">
+            <img src="{{ thing.image.url }}" alt="{{ thing.name }}">
+            <div class="description">
+                <h2>{{ thing.name }}</h2>
+                <p>{{ thing.description }}</p>
+                <p><strong>Цена:</strong> {{ thing.price }} руб.</p>
+            </div>
+        </div>
     </li>
     {% endfor %}
 </ul>
